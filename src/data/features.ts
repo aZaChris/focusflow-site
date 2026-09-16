@@ -1,5 +1,14 @@
+export type IconId =
+  | 'habit'
+  | 'mood'
+  | 'voice'
+  | 'timeline'
+  | 'widget'
+  | 'privacy'
+
 export interface Feature {
-  emoji: string
+  icon: IconId
+  accent: 'mint' | 'periwinkle'
   title: string
   description: string
 }
@@ -8,33 +17,45 @@ export interface Feature {
 // (vedi ~/focusflow/repo, specs 001-006).
 export const features: Feature[] = [
   {
-    emoji: '✅',
-    title: 'Abitudini e umore',
+    icon: 'habit',
+    accent: 'mint',
+    title: 'Abitudini & streak',
     description:
-      "Traccia le tue abitudini con streak calcolati al volo, e registra umore ed energia giorno per giorno — senza dover ricordare nulla a mente.",
+      'Costruisci routine con promemoria gentili e streak che celebrano la costanza, non la perfezione.',
   },
   {
-    emoji: '\u{1F5D3}️',
-    title: 'Timeline della giornata',
+    icon: 'mood',
+    accent: 'periwinkle',
+    title: 'Mood tracking',
     description:
-      "Un colpo d'occhio sul tuo oggi: un indicatore “ora” in tempo reale scorre lungo i blocchi delle tue attività pianificate.",
+      'Registra umore ed energia in pochi secondi, per capire cosa ti fa stare bene nel tempo.',
   },
   {
-    emoji: '\u{1F3A4}',
+    icon: 'voice',
+    accent: 'mint',
     title: 'Diario vocale con AI',
     description:
-      'Parla invece di scrivere: registri un pensiero, l’AI lo trascrive e ti restituisce un riepilogo dell’umore con un piccolo feedback.',
+      'Parla liberamente: la trascrizione e un piccolo riepilogo di umore arrivano da soli, senza dover scrivere.',
   },
   {
-    emoji: '\u{1F4F1}',
-    title: 'Widget "Now & Next"',
+    icon: 'timeline',
+    accent: 'periwinkle',
+    title: 'Timeline "ora e dopo"',
     description:
-      "Direttamente dalla home del telefono: cosa stai facendo ora e cosa viene dopo, senza nemmeno aprire l'app.",
+      'La giornata a colpo d’occhio, con un marcatore live che ti dice sempre dove sei senza dover chiedere.',
   },
   {
-    emoji: '✨',
-    title: 'Premium quando ti serve',
+    icon: 'widget',
+    accent: 'mint',
+    title: 'Widget home screen',
     description:
-      "Le funzioni base restano gratuite; l'abbonamento sblocca il resto quando l'app è entrata nella tua routine, gestibile in un tap.",
+      "Vedi cosa stai facendo ora e cosa viene dopo direttamente dalla schermata home, senza aprire l'app.",
+  },
+  {
+    icon: 'privacy',
+    accent: 'periwinkle',
+    title: 'Privacy al centro',
+    description:
+      'Login sicuro con autenticazione a due fattori e pieno controllo sui tuoi dati, in ogni momento.',
   },
 ]

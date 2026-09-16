@@ -17,9 +17,15 @@
 - [X] T010 `Footer.tsx`
 - [X] T011 `App.tsx` — compone le sezioni, sfondo/scroll generale
 - [X] T012 Verifica responsive a 360px e build di produzione
-- [ ] T013 Sostituire il placeholder del phone mockup con screenshot reali
-      dell'app (rimandato esplicitamente dall'utente)
-- [ ] T014 Collegare CTA "Scarica l'app" ai link store reali una volta
-      pubblicata
-- [ ] T015 Primo deploy su Vercel/host statico, collegato a
-      `github.com/aZaChris/focusflow-site`
+- [ ] T013 Sostituire i phone mockup vuoti con screenshot reali dell'app
+      (rimandato esplicitamente dall'utente)
+- [ ] T014 Collegare i CTA "Scarica per iOS/Android" ai link store reali una
+      volta pubblicata
+- [X] T015 Primo deploy su Vercel, collegato a
+      `github.com/aZaChris/focusflow-site`, dominio
+      `focusflow.christianseminerio.dev`
+- [X] T016 Applicato design handoff da Claude Design
+      (`design-handoff.dc.html`): tema scuro, nav sticky, sezione "Come
+      funziona" (4 step), griglia 6 feature (aggiunta "Privacy al centro" —
+      MFA/2FA, reale, vedi `useMfa.ts` nel repo app), sezione screenshot a 3
+      telefoni, CTA finale, badge posizionamento "Pensata per chi ha l'ADHD"

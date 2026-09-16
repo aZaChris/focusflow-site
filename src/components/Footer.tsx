@@ -1,23 +1,21 @@
-import { brand, colors, fonts } from '../config/brand'
+import { brand, fonts } from '../config/brand'
+import { useTheme } from '../theme/ThemeContext'
 
 export function Footer() {
+  const { theme } = useTheme()
+
   return (
     <footer
       className="flex flex-wrap items-center justify-between gap-4 px-5 py-8 md:px-16"
-      style={{ borderTop: `1px solid ${colors.border}` }}
+      style={{ borderTop: `1px solid ${theme.border}` }}
     >
       <div className="flex items-center gap-2.5">
-        <div
-          className="flex h-[26px] w-[26px] items-center justify-center rounded-full border-2"
-          style={{ borderColor: colors.accent }}
-        >
-          <div className="h-1.5 w-1.5 rounded-full" style={{ background: colors.accent }} />
-        </div>
-        <span style={{ fontFamily: fonts.heading, fontWeight: 600, fontSize: 15 }}>
+        <img src={brand.logo} alt="" className="h-6 w-6 object-contain" />
+        <span style={{ fontFamily: fonts.heading, fontWeight: 700, fontSize: 15, color: theme.text }}>
           {brand.name}
         </span>
       </div>
-      <span className="text-[13px]" style={{ color: colors.textFaint }}>
+      <span className="text-[13px]" style={{ color: theme.textMuted }}>
         © {new Date().getFullYear()} {brand.name}. Tutti i diritti riservati.
       </span>
     </footer>

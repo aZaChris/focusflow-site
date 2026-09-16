@@ -1,70 +1,78 @@
-import { colors } from '../config/brand'
 import type { IconId } from '../data/features'
 
-export function FeatureIcon({
-  icon,
-  accent,
-}: {
-  icon: IconId
-  accent: 'mint' | 'periwinkle'
-}) {
-  const c = accent === 'mint' ? colors.accent : colors.accent2
-  const soft = accent === 'mint' ? colors.accentSoft : colors.accent2Soft
+export function FeatureIcon({ icon, color }: { icon: IconId; color: string }) {
+  const props = { width: 20, height: 20, viewBox: '0 0 24 24', fill: 'none' }
 
   switch (icon) {
     case 'habit':
       return (
-        <div
-          className="h-10 w-10 rounded-[10px] border-2"
-          style={{ borderColor: c }}
-        />
+        <svg {...props}>
+          <circle cx="12" cy="12" r="8" stroke={color} strokeWidth="1.7" />
+          <path
+            d="M9 12l2 2 4-4"
+            stroke={color}
+            strokeWidth="1.7"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       )
     case 'mood':
       return (
-        <div
-          className="h-10 w-10 rounded-full border-2"
-          style={{ borderColor: c }}
-        />
+        <svg {...props}>
+          <path
+            d="M12 21s-7-4.5-7-10.5A5 5 0 0112 6a5 5 0 017 4.5C19 16.5 12 21 12 21z"
+            stroke={color}
+            strokeWidth="1.7"
+            strokeLinejoin="round"
+          />
+        </svg>
       )
     case 'voice':
       return (
-        <div
-          className="flex h-10 w-10 items-center justify-center rounded-[10px]"
-          style={{ background: soft }}
-        >
-          <div
-            className="h-3.5 w-3.5 rounded-full"
-            style={{ background: c, animation: 'ffPulse 1.8s ease-in-out infinite' }}
+        <svg {...props}>
+          <rect x="9" y="3" width="6" height="11" rx="3" stroke={color} strokeWidth="1.6" />
+          <path
+            d="M6 11a6 6 0 0012 0M12 17v3"
+            stroke={color}
+            strokeWidth="1.6"
+            strokeLinecap="round"
           />
-        </div>
+        </svg>
       )
     case 'timeline':
       return (
-        <div
-          className="flex h-10 w-10 items-center justify-center rounded-[10px] border-2"
-          style={{ borderColor: c }}
-        >
-          <div className="h-0.5 w-4" style={{ background: c }} />
-        </div>
+        <svg {...props}>
+          <path
+            d="M4 19V9M11 19V4M18 19v-6"
+            stroke={color}
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          />
+        </svg>
       )
-    case 'widget':
+    case 'reminder':
       return (
-        <div
-          className="h-10 w-10 rounded-[10px] border-2 border-dashed"
-          style={{ borderColor: c }}
-        />
+        <svg {...props}>
+          <path
+            d="M12 3v2M5 8a7 7 0 0114 0c0 4 2 5 2 7H3c0-2 2-3 2-7z"
+            stroke={color}
+            strokeWidth="1.6"
+            strokeLinejoin="round"
+          />
+          <path d="M9.5 19a2.5 2.5 0 005 0" stroke={color} strokeWidth="1.6" />
+        </svg>
       )
     case 'privacy':
       return (
-        <div
-          className="flex h-10 w-10 items-center justify-center rounded-full"
-          style={{ background: soft }}
-        >
-          <div
-            className="h-[18px] w-3.5 rounded-[3px] border-2"
-            style={{ borderColor: c }}
+        <svg {...props}>
+          <path
+            d="M12 3l7 3v6c0 5-3 7.5-7 9-4-1.5-7-4-7-9V6l7-3z"
+            stroke={color}
+            strokeWidth="1.6"
+            strokeLinejoin="round"
           />
-        </div>
+        </svg>
       )
   }
 }

@@ -17,15 +17,27 @@
 - [X] T010 `Footer.tsx`
 - [X] T011 `App.tsx` — compone le sezioni, sfondo/scroll generale
 - [X] T012 Verifica responsive a 360px e build di produzione
-- [ ] T013 Sostituire i phone mockup vuoti con screenshot reali dell'app
-      (rimandato esplicitamente dall'utente)
+- [ ] T013 Sostituire i mini-mockup illustrativi (hero + screenshot) con
+      screenshot reali dell'app (rimandato esplicitamente dall'utente)
 - [ ] T014 Collegare i CTA "Scarica per iOS/Android" ai link store reali una
       volta pubblicata
 - [X] T015 Primo deploy su Vercel, collegato a
       `github.com/aZaChris/focusflow-site`, dominio
       `focusflow.christianseminerio.dev`
-- [X] T016 Applicato design handoff da Claude Design
+- [X] T016 Applicato design handoff v1 da Claude Design
       (`design-handoff.dc.html`): tema scuro, nav sticky, sezione "Come
-      funziona" (4 step), griglia 6 feature (aggiunta "Privacy al centro" —
-      MFA/2FA, reale, vedi `useMfa.ts` nel repo app), sezione screenshot a 3
-      telefoni, CTA finale, badge posizionamento "Pensata per chi ha l'ADHD"
+      funziona" (4 step), griglia 6 feature, sezione screenshot a 3 telefoni,
+      CTA finale — superato da T017
+- [X] T017 Applicato design handoff v2 (`design-handoff-v2.dc.html`, progetto
+      "FocusFlow Website" nello zip "FocusFlow mobile app prototype"): tema
+      chiaro/scuro con toggle persistente (`localStorage`), font Manrope,
+      logo volpe reale (`public/fox-icon.png`), badge "Calma, ogni giorno"
+      (sostituisce il posizionamento ADHD), mini-mockup popolati (non più
+      vuoti: hero + Abitudini/Umore/Diario), icone SVG reali per le 6
+      feature. Nota: "Promemoria gentili" (una delle 6 feature) non risulta
+      implementata nel codice dell'app (nessun expo-notifications/reminder
+      trovato) — copy da verificare con l'utente prima del lancio, vedi
+      [[focusflow-site-landing]] in memoria
+- [ ] T018 Verificare/allineare il logo e i colori del sito con l'eventuale
+      handoff dell'app (separato, l'utente lo affronterà a parte) quando il
+      rebrand sarà definitivo

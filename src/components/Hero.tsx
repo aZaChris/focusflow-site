@@ -1,16 +1,17 @@
 import { motion } from 'motion/react'
-import { brand, colors, fonts } from '../config/brand'
+import { brand, fonts } from '../config/brand'
+import { useTheme } from '../theme/ThemeContext'
 import { PhoneMockup } from './PhoneMockup'
+import { HeroScreen } from './PhoneScreens'
 
 export function Hero() {
+  const { theme } = useTheme()
+
   return (
     <div className="relative overflow-hidden px-5 pt-12 pb-12 md:px-16 md:pt-20 md:pb-20">
       <div
         className="pointer-events-none absolute top-[20%] left-1/2 h-[620px] w-[620px] -translate-x-1/2 -translate-y-1/2 rounded-full"
-        style={{
-          background:
-            'radial-gradient(circle, rgba(127,224,192,0.14), transparent 70%)',
-        }}
+        style={{ background: theme.glow }}
       />
       <div className="relative mx-auto flex max-w-6xl flex-wrap items-center gap-10 md:gap-16">
         <motion.div
@@ -20,44 +21,42 @@ export function Hero() {
           className="flex min-w-[300px] flex-1 basis-[420px] flex-col items-start text-left"
         >
           <div
-            className="mb-6 rounded-full px-4 py-1.5 text-[13px] font-medium tracking-wider uppercase"
-            style={{
-              color: colors.accent,
-              background: colors.accentSoft,
-              border: `1px solid ${colors.accentBorder}`,
-            }}
+            className="mb-6 rounded-full px-4 py-1.5 text-[13px] font-semibold tracking-wider uppercase"
+            style={{ color: theme.accentText, background: theme.accentTint }}
           >
             {brand.eyebrow}
           </div>
           <h1
-            className="mb-5 text-[34px] leading-[1.1] font-bold tracking-tight md:text-[56px]"
+            className="mb-5 text-[34px] leading-[1.1] font-extrabold tracking-tight md:text-[54px]"
             style={{ fontFamily: fonts.heading, whiteSpace: 'pre-line' }}
           >
             {brand.tagline}
           </h1>
           <p
             className="mb-9 max-w-[480px] text-base leading-relaxed md:text-lg"
-            style={{ color: colors.textSecondary }}
+            style={{ color: theme.textSecondary }}
           >
             {brand.subtitle}
           </p>
           <div className="flex flex-wrap gap-3.5">
-            <a
+            <motion.a
               href={brand.ctaHref}
-              className="rounded-full px-7 py-4 text-base font-semibold"
-              style={{ background: colors.accent, color: '#0B1210' }}
+              whileHover={{ y: -2, boxShadow: '0 10px 22px -6px rgba(193,80,46,0.5)' }}
+              className="rounded-full px-7 py-4 text-base font-bold text-white"
+              style={{ background: theme.accent }}
             >
               {brand.ctaPrimary}
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="#come-funziona"
-              className="rounded-full px-7 py-4 text-base font-medium"
-              style={{ border: '1px solid rgba(255,255,255,0.18)', color: colors.textPrimary }}
+              whileHover={{ y: -2, borderColor: theme.accent }}
+              className="rounded-full px-7 py-4 text-base font-semibold"
+              style={{ border: `1px solid ${theme.border}`, color: theme.text }}
             >
               {brand.ctaSecondary}
-            </a>
+            </motion.a>
           </div>
-          <p className="mt-4 text-[13px]" style={{ color: colors.textFaint }}>
+          <p className="mt-4 text-[13px]" style={{ color: theme.textMuted }}>
             {brand.ctaFootnote}
           </p>
         </motion.div>
@@ -65,10 +64,13 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
+          whileHover={{ y: -6, rotate: -1 }}
           transition={{ duration: 0.7, delay: 0.15 }}
           className="flex min-w-[240px] flex-1 basis-[300px] justify-center"
         >
-          <PhoneMockup />
+          <PhoneMockup>
+            <HeroScreen />
+          </PhoneMockup>
         </motion.div>
       </div>
     </div>

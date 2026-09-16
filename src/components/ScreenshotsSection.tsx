@@ -1,30 +1,40 @@
-import { colors, fonts } from '../config/brand'
+import { fonts } from '../config/brand'
+import { useTheme } from '../theme/ThemeContext'
 import { PhoneMockup } from './PhoneMockup'
+import { HabitsScreen, JournalScreen, MoodScreen } from './PhoneScreens'
 import { ScrollReveal } from './ScrollReveal'
 
-const screens = ['Timeline', 'Abitudini', 'Diario vocale']
+const screens = [
+  { label: 'Abitudini', Screen: HabitsScreen },
+  { label: 'Umore', Screen: MoodScreen },
+  { label: 'Diario vocale', Screen: JournalScreen },
+]
 
 export function ScreenshotsSection() {
+  const { theme } = useTheme()
+
   return (
     <div id="screenshot" className="px-5 py-16 md:px-16 md:py-24">
       <div className="mx-auto mb-14 max-w-xl text-center">
         <h2
-          className="mb-3.5 text-[28px] font-semibold tracking-tight md:text-[38px]"
+          className="mb-3.5 text-[28px] font-extrabold tracking-tight md:text-[38px]"
           style={{ fontFamily: fonts.heading }}
         >
           Dai un'occhiata dentro
         </h2>
-        <p className="text-base leading-relaxed" style={{ color: colors.textSecondary }}>
+        <p className="text-base leading-relaxed" style={{ color: theme.textSecondary }}>
           Un'interfaccia calma, pensata per non sovraccaricare.
         </p>
       </div>
 
       <div className="mx-auto flex max-w-4xl flex-wrap justify-center gap-8">
-        {screens.map((label, i) => (
+        {screens.map(({ label, Screen }, i) => (
           <ScrollReveal key={label} delay={i * 0.1} className="flex flex-col items-center gap-3.5">
-            <PhoneMockup width={220} height={460} />
-            <span className="text-[13px]" style={{ color: colors.textFaint }}>
-              {label} — a breve
+            <PhoneMockup width={220} height={460}>
+              <Screen />
+            </PhoneMockup>
+            <span className="text-[13px]" style={{ color: theme.textMuted }}>
+              {label}
             </span>
           </ScrollReveal>
         ))}

@@ -5,10 +5,11 @@ import { FeatureGrid } from './components/FeatureGrid'
 import { ScreenshotsSection } from './components/ScreenshotsSection'
 import { FinalCTA } from './components/FinalCTA'
 import { Footer } from './components/Footer'
+import { ThemeProvider } from './theme/ThemeContext'
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <ThemeProvider>
       <NavBar />
       <Hero />
       <HowItWorks />
@@ -16,7 +17,7 @@ function App() {
       <ScreenshotsSection />
       <FinalCTA />
       <Footer />
-    </div>
+    </ThemeProvider>
   )
 }
 

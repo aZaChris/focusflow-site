@@ -1,3 +1,5 @@
+import { brand } from '../config/brand'
+
 export interface Step {
   number: string
   title: string
@@ -19,8 +21,7 @@ export const steps: Step[] = [
   {
     number: '03',
     title: 'Racconta la giornata a voce',
-    description:
-      'Registra un pensiero: FocusFlow lo trascrive e ti restituisce un riepilogo di umore.',
+    description: `Registra un pensiero: ${brand.name} lo trascrive e ti restituisce un riepilogo di umore.`,
   },
   {
     number: '04',

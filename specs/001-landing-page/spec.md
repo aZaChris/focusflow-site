@@ -6,14 +6,14 @@
 
 **Status**: Draft
 
-**Input**: User description: "Sito vetrina per l'app FocusFlow (nome cambierà), stack moderno (React), fluido/animato/scorrevole, mostra tutte le capacità del prodotto, con mockup di un telefono che mostra gli screen (in una fase successiva)."
+**Input**: User description: "Sito vetrina per l'app Foxus (nome cambierà), stack moderno (React), fluido/animato/scorrevole, mostra tutte le capacità del prodotto, con mockup di un telefono che mostra gli screen (in una fase successiva)."
 
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Capire cosa fa il prodotto in pochi secondi (Priority: P1)
 
 Un visitatore arriva da un link (social, App Store, passaparola) e in meno di
-10 secondi deve capire cosa fa FocusFlow e per chi è.
+10 secondi deve capire cosa fa Foxus e per chi è.
 
 **Why this priority**: senza questo, nessuna delle altre sezioni verrà letta.
 
@@ -103,7 +103,7 @@ telefono mostra uno screenshot (reale o placeholder) dell'app.
 ### Key Entities
 
 - **Feature**: titolo, descrizione breve, icona/illustrazione — una per ogni
-  capacità reale dell'app (fonte: `~/focusflow/repo` README/specs).
+  capacità reale dell'app (fonte: `~/foxus/repo` README/specs).
 - **BrandConfig**: nome prodotto, colore primario/sfondo, eventualmente logo.
 
 ## Success Criteria *(mandatory)*
@@ -113,7 +113,7 @@ telefono mostra uno screenshot (reale o placeholder) dell'app.
 - **SC-001**: Prima sezione (hero) comunica il value proposition senza scroll,
   su schermo 360×640.
 - **SC-002**: Tutte e 5 le feature reali dell'app hanno una sezione dedicata.
-- **SC-003**: Nessuna stringa "FocusFlow" hardcoded fuori da `brand.ts`
+- **SC-003**: Nessuna stringa "Foxus" hardcoded fuori da `brand.ts`
   (verificabile con grep).
 - **SC-004**: Build di produzione (`npm run build`) passa senza errori.
 

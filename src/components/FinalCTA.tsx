@@ -1,5 +1,5 @@
 import { motion } from 'motion/react'
-import { fonts } from '../config/brand'
+import { brand, fonts } from '../config/brand'
 import { useTheme } from '../theme/ThemeContext'
 import { ScrollReveal } from './ScrollReveal'
 
@@ -21,7 +21,7 @@ export function FinalCTA() {
           className="mb-4.5 text-[28px] font-extrabold tracking-tight md:text-[42px]"
           style={{ fontFamily: fonts.heading }}
         >
-          Prova FocusFlow, gratis
+          Prova {brand.name}, gratis
         </h2>
         <p
           className="mx-auto mb-8 max-w-[480px] text-base leading-relaxed"

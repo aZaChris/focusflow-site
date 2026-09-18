@@ -1,4 +1,4 @@
-# FocusFlow Site Constitution
+# Foxus Site Constitution
 
 ## Core Principles
 
@@ -10,7 +10,7 @@ place editable without touching layout code. Deploy target is a static host
 
 ### II. Real Product, Real Claims
 Every feature claim on the site maps to a feature that actually exists in the
-FocusFlow app (`~/focusflow/repo`). No invented capabilities. Screenshots/mockups
+Foxus app (`~/foxus/repo`). No invented capabilities. Screenshots/mockups
 show the real UI (or a faithful placeholder clearly built from it) — never a
 generic stock app screenshot.
 
@@ -37,7 +37,7 @@ section must work down to 360px width before desktop polish.
 
 ## Governance
 
-This constitution guides `focusflow-site` only. Simplicity (Principle I) wins
+This constitution guides `foxus-site` only. Simplicity (Principle I) wins
 ties. Amend by editing this file when a real constraint changes.
 
 **Version**: 1.0.0 | **Ratified**: 2026-09-16 | **Last Amended**: 2026-09-16

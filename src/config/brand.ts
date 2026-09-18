@@ -1,11 +1,11 @@
 // Nome prodotto in un unico posto: cambierà a breve, non ripeterlo altrove.
 export const brand = {
-  name: 'FocusFlow',
+  name: 'Foxus',
   logo: '/fox-icon.png',
   eyebrow: 'Calma, ogni giorno',
   tagline: 'Meno rumore in testa.\nPiù spazio per vivere la giornata.',
   subtitle:
-    'FocusFlow organizza abitudini, umore e giornata in un unico posto, con promemoria gentili e nessun giudizio.',
+    'Foxus organizza abitudini, umore e giornata in un unico posto, con promemoria gentili e nessun giudizio.',
   ctaPrimary: 'Inizia la prova gratuita',
   ctaSecondary: 'Come funziona',
   ctaFootnote: 'Nessuna carta richiesta · Disponibile su iOS e Android',
@@ -18,7 +18,7 @@ export const fonts = {
   body: "'Manrope', sans-serif",
 }
 
-// Design handoff (Claude Design, "FocusFlow Website") — tema chiaro/scuro.
+// Design handoff (Claude Design, "Foxus Website") — tema chiaro/scuro.
 export interface Theme {
   bg: string
   surface: string

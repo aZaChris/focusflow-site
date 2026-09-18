@@ -7,7 +7,7 @@ export interface Feature {
 }
 
 // Una voce per ogni feature reale già implementata nell'app
-// (vedi ~/focusflow/repo, specs 001-006).
+// (vedi ~/foxus/repo, specs 001-006).
 export const features: Feature[] = [
   {
     icon: 'habit',

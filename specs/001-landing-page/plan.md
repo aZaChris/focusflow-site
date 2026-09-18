@@ -7,7 +7,7 @@
 ## Summary
 
 One-page landing statica (React) con hero, 5 sezioni feature (una per
-capacità reale dell'app FocusFlow: habit/mood, timeline, diario vocale AI,
+capacità reale dell'app Foxus: habit/mood, timeline, diario vocale AI,
 widget Android, abbonamento), un mockup telefono riusabile, footer. Animata
 allo scroll con Framer Motion, rispetta `prefers-reduced-motion`. Nessun
 backend.
@@ -39,7 +39,7 @@ Tailwind + motion
 
 - Static-First: OK, nessun backend previsto.
 - Real Product, Real Claims: le 5 sezioni feature mappano 1:1 le feature
-  001-006 già implementate in `~/focusflow/repo`.
+  001-006 già implementate in `~/foxus/repo`.
 - Renameable: nome in `src/config/brand.ts`.
 - Performance & Motion Discipline: una sola libreria di animazione (`motion`).
 - Mobile-First Responsive: Tailwind breakpoints, hero testato a 360px.
@@ -60,7 +60,7 @@ specs/001-landing-page/
 ### Source Code (repository root)
 
 ```text
-focusflow-site/
+foxus-site/
 ├── src/
 │   ├── config/
 │   │   └── brand.ts          # nome prodotto, colori — unica fonte di verità

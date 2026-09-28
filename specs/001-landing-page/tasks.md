@@ -58,6 +58,9 @@
     largamente `style={{...}}` inline per il tema — necessario finché lo
     theming resta così, altrimenti servirebbe un refresh a CSS
     variables/classi Tailwind statiche
-  - Non fatto: og:image è ancora il solo logo volpe (trasparente,
-    445×616) invece di una social card 1200×630 disegnata; sitemap.xml ha
-    un solo URL (sito one-page, corretto per ora)
+  - sitemap.xml ha un solo URL (sito one-page, corretto per ora)
+- [X] T020 Social card `og:image` 1200×630 (`public/og-image.png`), al posto
+      del solo logo volpe — renderizzata da un template HTML on-brand
+      (Manrope, palette chiara, headline+tagline), `twitter:card` passato a
+      `summary_large_image`, verificata live (200, referenziata
+      correttamente nei meta tag)

@@ -24,15 +24,16 @@ function readStoredPreference(): boolean {
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [isDark, setIsDark] = useState(readStoredPreference)
 
+  const theme = isDark ? darkTheme : lightTheme
+
   useEffect(() => {
     try {
       localStorage.setItem(STORAGE_KEY, isDark ? 'dark' : 'light')
     } catch {
       // ponytail: browser storage can throw (private mode) — theme just won't persist.
     }
-  }, [isDark])
-
-  const theme = isDark ? darkTheme : lightTheme
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme.bg)
+  }, [isDark, theme.bg])
 
   return (
     <ThemeContext.Provider value={{ theme, isDark, toggleDark: () => setIsDark((d) => !d) }}>

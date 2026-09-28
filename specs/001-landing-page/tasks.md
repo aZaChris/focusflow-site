@@ -22,8 +22,9 @@
 - [ ] T014 Collegare i CTA "Scarica per iOS/Android" ai link store reali una
       volta pubblicata
 - [X] T015 Primo deploy su Vercel, collegato a
-      `github.com/aZaChris/foxus-site`, dominio
-      `foxus.christianseminerio.dev`
+      `github.com/aZaChris/focusflow-site`, dominio
+      `focusflow.christianseminerio.dev` (repo e dominio non rinominati col
+      rebrand prodotto FocusFlow→Foxus — vedi T018)
 - [X] T016 Applicato design handoff v1 da Claude Design
       (`design-handoff.dc.html`): tema scuro, nav sticky, sezione "Come
       funziona" (4 step), griglia 6 feature, sezione screenshot a 3 telefoni,
@@ -40,4 +41,23 @@
       [[foxus-site-landing]] in memoria
 - [ ] T018 Verificare/allineare il logo e i colori del sito con l'eventuale
       handoff dell'app (separato, l'utente lo affronterà a parte) quando il
-      rebrand sarà definitivo
+      rebrand sarà definitivo; valutare se rinominare anche repo GitHub e
+      dominio custom da `focusflow-*` a `foxus-*`
+- [X] T019 Revisione SEO/security (2026-09-28): sincronizzato il commit di
+      rebrand rimasto solo locale (mai pushato/deployato dal 18/09) e
+      deployato in produzione insieme a:
+  - `lang="it"` (era `en`), `<meta name="theme-color">` sincronizzato col
+    toggle chiaro/scuro, canonical, Open Graph + Twitter Card tags
+  - `public/robots.txt` + `public/sitemap.xml`
+  - `vercel.json`: CSP, X-Frame-Options, X-Content-Type-Options,
+    Referrer-Policy, Permissions-Policy — verificati in produzione (nessun
+    errore console/CSP dopo il deploy, incluso il toggle dark mode)
+  - `npm audit`: 0 vulnerabilità; nessun secret committato (`.env*`,
+    `.vercel` già ignorati)
+  - Nota: `style-src` include `'unsafe-inline'` perché i componenti usano
+    largamente `style={{...}}` inline per il tema — necessario finché lo
+    theming resta così, altrimenti servirebbe un refresh a CSS
+    variables/classi Tailwind statiche
+  - Non fatto: og:image è ancora il solo logo volpe (trasparente,
+    445×616) invece di una social card 1200×630 disegnata; sitemap.xml ha
+    un solo URL (sito one-page, corretto per ora)

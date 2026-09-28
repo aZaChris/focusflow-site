@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://focusflow.christianseminerio.dev/sitemap.xml
